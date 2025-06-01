@@ -30,7 +30,7 @@ const formSchema = z
 	});
 
 const SignUpView = () => {
-	const rouer = useRouter();
+	const router = useRouter();
 	const [error, setError] = useState<string | null>(null);
 	const [isPending, setIsPending] = useState(false);
 
@@ -55,7 +55,7 @@ const SignUpView = () => {
 			},
 			{
 				onSuccess: () => {
-					rouer.push("/dashboard");
+					router.push("/dashboard");
 					setIsPending(false);
 				},
 				onError: ({ error }) => {

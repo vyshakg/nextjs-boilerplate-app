@@ -23,7 +23,7 @@ const formSchema = z.object({
 });
 
 const SignInView = () => {
-	const rouer = useRouter();
+	const router = useRouter();
 	const [error, setError] = useState<string | null>(null);
 	const [isPending, setIsPending] = useState(false);
 
@@ -45,7 +45,7 @@ const SignInView = () => {
 			},
 			{
 				onSuccess: () => {
-					rouer.push("/dashboard");
+					router.push("/dashboard");
 					setIsPending(false);
 				},
 				onError: ({ error }) => {
